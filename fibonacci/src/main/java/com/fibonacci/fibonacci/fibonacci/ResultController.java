@@ -3,6 +3,7 @@ package com.fibonacci.fibonacci.fibonacci;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,9 +28,24 @@ public class ResultController {
 
     @GetMapping("/{index}")
     int findResult(@PathVariable int index) {
-        return resultRepository.findByIndex(index);
-        //return ResultCalculator.Calculate(index);
+        if (index != (int)index) {
+            System.err.println("Invalid index");
+            return -1;
+        }
+
+        Optional<Integer> result = resultRepository.findByIndex(index);
+        
+        if(result.isPresent()){
+            return result.get();
+        }
+
+        int calculatedValue = ResultCalculator.Calculate(index);
+
+        resultRepository.add(index, calculatedValue);
+
+        return calculatedValue;
     }
+
 
 
 }

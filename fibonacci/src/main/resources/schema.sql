@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS "Fibonacci" (
+    id INT PRIMARY KEY NOT NULL,
+    result BIGINT NOT NULL
+);
