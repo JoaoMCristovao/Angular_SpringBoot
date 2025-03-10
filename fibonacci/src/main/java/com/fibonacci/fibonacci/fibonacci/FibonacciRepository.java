@@ -1,20 +1,14 @@
 package com.fibonacci.fibonacci.fibonacci;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
-
-import ch.qos.logback.classic.Logger;
-import jakarta.annotation.PostConstruct;
 
 @Repository
 public class FibonacciRepository {
 
-    private static final org.slf4j.Logger log = LoggerFactory.getLogger(FibonacciRepository.class);
     private final JdbcClient jdbcClient;
 
     public FibonacciRepository(JdbcClient jdbcClient) {
