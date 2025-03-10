@@ -1,6 +1,6 @@
 package com.fibonacci.fibonacci.fibonacci;
 
-public class ResultCalculator {
+public class FibonacciCalculator {
     public static int Calculate(int index){
         if(index < 0){
             System.err.println("Invalid index");

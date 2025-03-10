@@ -1,6 +1,6 @@
 package com.fibonacci.fibonacci.fibonacci;
 
-public record Result(
+public record Fibonacci(
     int input,
     int output
 ) {}
