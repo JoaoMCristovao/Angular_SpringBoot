@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class OutputComponent {
 
+  value: number = 0;
+
+  targetValue : number = 0;
+
+  
+
 }
